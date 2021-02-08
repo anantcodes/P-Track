@@ -14,14 +14,16 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
           title: Text("Login page"),
         ),
-        body: FlatButton(
+        body: Center(
+         child: FlatButton(
 
-          child: Text("Login"),
-          color: Colors.amber,
-          onPressed: () {
-            Navigator.pushNamed(context, '/control');
+           child: Text("Login"),
+           color: Colors.amber,
+           onPressed: () {
+             Navigator.pushNamed(context, '/control');
 
-          },
+           },
+         ),
         ),
       ),
     );
