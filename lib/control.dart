@@ -11,6 +11,15 @@ class _ControlState extends State<Control> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.green,
+        body: Center(
+          child: FlatButton(
+            child: Text('Control center'),
+            color: Colors.red,
+            onPressed: (){
+              Navigator.pushNamed(context, '/login');
+            },
+          ),
+        ),
       ),
     );
   }

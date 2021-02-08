@@ -9,7 +9,7 @@ void main() {
     routes: {
 
       '/control':(context)=>Control(),
-      // '/homePage':(context)=>HomePage()
+      '/login':(context)=>Login()
     },
   ));
 }
