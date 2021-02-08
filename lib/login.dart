@@ -8,6 +8,21 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blue,
+        appBar: AppBar(
+          title: Text("Login page"),
+        ),
+        body: FlatButton(
+          
+          child: Text("Login"),
+          color: Colors.amber,
+          onPressed: () {
+
+          },
+        ),
+      ),
+    );
   }
 }

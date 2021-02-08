@@ -8,6 +8,10 @@ class Control extends StatefulWidget {
 class _ControlState extends State<Control> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.green,
+      ),
+    );
   }
 }
