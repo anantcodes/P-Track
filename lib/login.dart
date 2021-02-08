@@ -15,10 +15,11 @@ class _LoginState extends State<Login> {
           title: Text("Login page"),
         ),
         body: FlatButton(
-          
+
           child: Text("Login"),
           color: Colors.amber,
           onPressed: () {
+            Navigator.pushNamed(context, '/control');
 
           },
         ),
