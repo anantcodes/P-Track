@@ -79,19 +79,11 @@ class _LoginState extends State<Login> {
                     ]
                 )
             )
-
-         // child: FlatButton(
-         //
-         //   child: Text("Login"),
-         //   color: Colors.amber,
-         //   onPressed: () {
-         //     Navigator.pushNamed(context, '/control');
-         //
-         //   },
          ),
         ),
       ),
     );
   }
 }
+
 
