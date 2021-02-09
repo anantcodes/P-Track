@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                                 gravity: ToastGravity.BOTTOM);
                           }
                         },
-                        child: Text('Next'),
+                        child: Text('Login'),
                       )
                     ]
                 )
@@ -98,3 +98,4 @@ class _LoginState extends State<Login> {
     );
   }
 }
+
