@@ -10,11 +10,16 @@ class _ControlState extends State<Control> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.green,
+        appBar: AppBar(
+          title: Text(
+            "Home page",
+          ),
+        ),
+        backgroundColor: Colors.yellow,
         body: Center(
           child: FlatButton(
             child: Text('Control center'),
-            color: Colors.red,
+            color: Colors.blue,
             onPressed: (){
               Navigator.pushNamed(context, '/login');
             },

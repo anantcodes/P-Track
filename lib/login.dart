@@ -80,10 +80,6 @@ class _LoginState extends State<Login> {
                 )
             )
 
-
-
-
-
          // child: FlatButton(
          //
          //   child: Text("Login"),
