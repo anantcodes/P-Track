@@ -17,15 +17,35 @@ class _ControlState extends State<Control> {
         ),
         backgroundColor: Colors.yellow,
         body: Center(
-          child: FlatButton(
+          child:Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+              Text(
+                  'Text assigned',
+                  style: TextStyle( // your text
+              fontSize: 50.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white)
+          ),
+
+          FlatButton(
             child: Text('Control center'),
             color: Colors.blue,
             onPressed: (){
               Navigator.pushNamed(context, '/login');
             },
           ),
+          ]
+
+      )
+
+
+
+
+
         ),
-      ),
+        )
+
     );
   }
 }
