@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
                       FlatButton(
                         color: Colors.blue,
                         onPressed: () {
-                          if(emailController.text=='anant1234@gmail.com'&& passwordController.text=='anant')
+                          if(emailController.text=='anant1234@gmail.com'&& passwordController.text=='anant') // email and password static 
                           {
                             Navigator.pushNamed(context, '/control');    //push to next route
                             Fluttertoast.showToast(
