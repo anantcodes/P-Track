@@ -16,25 +16,25 @@ class _ControlState extends State<Control> {
               ),
             ),
             backgroundColor: Colors.yellow,
-            body: new Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+            body:
+
                   Text('Text assigned',
                       style: TextStyle(
                           // your text
                           fontSize: 50.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white)),
-                  FlatButton(
-                    child: Text('Control center'),
-                    color: Colors.blue,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
+                          color: Colors.white)
                   ),
-                  Align(
-                      alignment: Alignment.bottomCenter,
-                      child: BottomNavigationBar(
+                  // FlatButton(
+                  //   child: Text('Control center'),
+                  //   color: Colors.blue,
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, '/login');
+                  //   },
+                  // ),
+                  // ],
+
+                bottomNavigationBar : BottomNavigationBar(
                         items: const <BottomNavigationBarItem>[
                           BottomNavigationBarItem(
                             icon: Icon(Icons.home),
@@ -51,9 +51,9 @@ class _ControlState extends State<Control> {
                         ],
                       )
                   ),
-                ]
-            )
-        )
+
+
+
     );
   }
 }
