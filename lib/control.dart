@@ -16,10 +16,10 @@ class _ControlState extends State<Control> {
             ),
           ),
           backgroundColor: Colors.deepPurpleAccent,
-          body: Text('Text assigned',
+          body: Text('Choose your level',
               style: TextStyle(
                   // your text
-                  fontSize: 50.0,
+                  fontSize: 25.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.white)
           ),
