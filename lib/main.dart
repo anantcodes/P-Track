@@ -15,3 +15,5 @@ void main() {
 
 // Login page done
 // Remain : Work on control.dart file
+// 1) make the bottom bar items functional
+// 2) add a button in home screen for level selection
