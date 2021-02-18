@@ -15,7 +15,7 @@ class _ControlState extends State<Control> {
               "Home page",
             ),
           ),
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.deepPurpleAccent,
           body: Text('Text assigned',
               style: TextStyle(
                   // your text
