@@ -16,9 +16,8 @@ class _ControlState extends State<Control> {
             ),
           ),
           backgroundColor: Colors.deepPurpleAccent,
-          body: Text('Choose your level',
+          body: Text('Choose your tier',
               style: TextStyle(
-                  // your text
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.white)
