@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:percent_indicator/percent_indicator.dart';
 class Control extends StatefulWidget {
   @override
   _ControlState createState() => _ControlState();
@@ -42,3 +42,6 @@ class _ControlState extends State<Control> {
     );
   }
 }
+
+// for progress bar
+// https://pub.dev/packages/percent_indicator

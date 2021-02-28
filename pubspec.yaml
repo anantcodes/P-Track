@@ -26,6 +26,7 @@ dependencies:
 
 
   fluttertoast: ^7.1.6
+  percent_indicator: "^2.1.7+2"
 
 
   # The following adds the Cupertino Icons font to your application.
