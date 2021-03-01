@@ -22,6 +22,7 @@ class _ControlState extends State<Control> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white)
           ),
+
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -45,3 +46,13 @@ class _ControlState extends State<Control> {
 
 // for progress bar
 // https://pub.dev/packages/percent_indicator
+
+//To be included
+
+// new CircularPercentIndicator(
+// radius: 60.0,
+// lineWidth: 5.0,
+// percent: 1.0,
+// center: new Text("100%"),
+// progressColor: Colors.green,
+// )
