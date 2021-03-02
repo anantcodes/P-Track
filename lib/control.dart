@@ -56,3 +56,5 @@ class _ControlState extends State<Control> {
 // center: new Text("100%"),
 // progressColor: Colors.green,
 // )
+
+// code optimisation to be done for all progresses
