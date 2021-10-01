@@ -11,8 +11,23 @@ class _ControlState extends State<Control> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text(
-              "Home page",
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Home page",
+                ),
+                TextButton.icon(
+                  label: Text("Exit"),
+                  icon: Icon(
+                    Icons.close,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                )
+              ],
             ),
           ),
           backgroundColor: Colors.white,
