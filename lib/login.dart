@@ -43,11 +43,14 @@ class _LoginState extends State<Login> {
                           obscureText: true, //text hiding
                         ),
                         SizedBox(height: 45.0),
-                        FlatButton(
-                          color: Colors.blue,
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.blue,
+                          ),
                           onPressed: () {
                             if (emailController.text == 'anant1234@gmail.com' &&
-                                passwordController.text == 'anant') // email and password static
+                                passwordController.text ==
+                                    'anant') // email and password static
                             {
                               Navigator.pushNamed(
                                   context, '/control'); //push to next route
@@ -68,10 +71,7 @@ class _LoginState extends State<Login> {
                           },
                           child: Text('Login'),
                         )
-                      ]
-                  )
-              )
-          ),
+                      ]))),
         ),
       ),
     );
