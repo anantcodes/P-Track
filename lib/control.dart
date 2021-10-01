@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
 class Control extends StatefulWidget {
   @override
   _ControlState createState() => _ControlState();
@@ -11,8 +12,22 @@ class _ControlState extends State<Control> {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text(
-              "Home page",
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Home page",
+                ),
+                TextButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.close,
+                      color: Colors.white,
+                    ),
+                    label: Text("Exit"))
+              ],
             ),
           ),
           backgroundColor: Colors.blueGrey,
@@ -20,9 +35,7 @@ class _ControlState extends State<Control> {
               style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white)
-          ),
-
+                  color: Colors.white)),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -38,8 +51,7 @@ class _ControlState extends State<Control> {
                 label: 'School',
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 }
