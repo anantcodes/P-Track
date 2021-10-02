@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+
 class Control extends StatefulWidget {
   @override
   _ControlState createState() => _ControlState();
@@ -15,14 +15,26 @@ class _ControlState extends State<Control> {
               "Home page",
             ),
           ),
-          backgroundColor: Colors.blueGrey,
-          body: Text('Choose your tier',
-              style: TextStyle(
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white)
+          backgroundColor: Colors.white,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.home,
+                size: 250.0,
+                color: Colors.grey,
+              ),
+              Text(
+                'HOME',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
           ),
-
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -38,23 +50,7 @@ class _ControlState extends State<Control> {
                 label: 'School',
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 }
-
-// for progress bar
-// https://pub.dev/packages/percent_indicator
-
-//To be included
-
-// new CircularPercentIndicator(
-// radius: 60.0,
-// lineWidth: 5.0,
-// percent: 1.0,
-// center: new Text("100%"),
-// progressColor: Colors.green,
-// )
-
-// code optimisation to be done for all progresses
