@@ -16,7 +16,6 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blue,
         appBar: AppBar(
           title: Text("Login page"),
         ),
@@ -43,36 +42,41 @@ class _LoginState extends State<Login> {
                           obscureText: true, //text hiding
                         ),
                         SizedBox(height: 45.0),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            primary: Colors.white,
-                            backgroundColor: Colors.blue,
-                            shadowColor: Colors.grey,
-                            elevation: 5.0,
-                          ),
-                          onPressed: () {
-                            if (emailController.text == 'anant1234@gmail.com' &&
-                                passwordController.text ==
-                                    'anant') // email and password static
-                            {
-                              Navigator.pushNamed(
-                                  context, '/control'); //push to next route
-                              Fluttertoast.showToast(
-                                msg: 'Login successfull',
-                                textColor: Colors.red,
-                                backgroundColor: Colors.grey,
-                                gravity: ToastGravity.BOTTOM,
-                              );
-                            } else {
-                              Fluttertoast.showToast(
-                                  msg: 'Login unsuccessfull',
+                        Container(
+                          width: double.infinity,
+                          height: 40,
+                          child: TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.white,
+                              backgroundColor: Theme.of(context).primaryColor,
+                              shadowColor: Colors.grey,
+                              elevation: 5.0,
+                            ),
+                            onPressed: () {
+                              if (emailController.text ==
+                                      'anant1234@gmail.com' &&
+                                  passwordController.text ==
+                                      'anant') // email and password static
+                              {
+                                Navigator.pushNamed(
+                                    context, '/control'); //push to next route
+                                Fluttertoast.showToast(
+                                  msg: 'Login successfull',
                                   textColor: Colors.red,
                                   backgroundColor: Colors.grey,
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  gravity: ToastGravity.BOTTOM);
-                            }
-                          },
-                          child: Text('Login'),
+                                  gravity: ToastGravity.BOTTOM,
+                                );
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg: 'Login unsuccessfull',
+                                    textColor: Colors.red,
+                                    backgroundColor: Colors.grey,
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM);
+                              }
+                            },
+                            child: Text('Login'),
+                          ),
                         )
                       ]))),
         ),
