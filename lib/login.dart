@@ -51,9 +51,9 @@ class _LoginState extends State<Login> {
                             elevation: 5.0,
                           ),
                           onPressed: () {
-                            if (emailController.text == 'anant1234@gmail.com' &&
+                            if (emailController.text == 'devkishor@gmail.com' &&
                                 passwordController.text ==
-                                    'anant') // email and password static
+                                    'devkishor') // email and password static
                             {
                               Navigator.pushNamed(
                                   context, '/control'); //push to next route
@@ -63,6 +63,8 @@ class _LoginState extends State<Login> {
                                 backgroundColor: Colors.grey,
                                 gravity: ToastGravity.BOTTOM,
                               );
+                              emailController.clear();
+                              passwordController.clear();
                             } else {
                               Fluttertoast.showToast(
                                   msg: 'Login unsuccessfull',
