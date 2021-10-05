@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:p_track/screens/business_screen.dart';
+import 'package:p_track/screens/home_screen.dart';
+import 'package:p_track/screens/school_screen.dart';
 
 class Control extends StatefulWidget {
   @override
@@ -6,6 +9,13 @@ class Control extends StatefulWidget {
 }
 
 class _ControlState extends State<Control> {
+  int currentIndex = 0;
+  final screens = [
+    HomeScreen(),
+    BusinessScreen(),
+    SchoolScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,26 +41,21 @@ class _ControlState extends State<Control> {
             ),
           ),
           backgroundColor: Colors.white,
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.home,
-                size: 250.0,
-                color: Colors.grey,
-              ),
-              Text(
-                'HOME',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 40.0,
-                  color: Colors.grey,
-                ),
-              ),
-            ],
+          body: IndexedStack(
+            index: currentIndex,
+            children: screens,
           ),
           bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: Colors.white,
+            selectedFontSize: 18,
+            unselectedFontSize: 14,
+            backgroundColor: Theme.of(context).primaryColor,
+            currentIndex: currentIndex,
+            onTap: (newIndex) {
+              setState(() {
+                currentIndex = newIndex;
+              });
+            },
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
