@@ -20,7 +20,7 @@ class _ControlState extends State<Control> {
                 TextButton.icon(
                   label: Text("Exit"),
                   icon: Icon(
-                    Icons.close,
+                    Icons.exit_to_app,
                     color: Colors.white,
                   ),
                   onPressed: () {
