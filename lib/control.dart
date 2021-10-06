@@ -70,7 +70,8 @@ class _ControlState extends State<Control> {
                 label: 'School',
               ),
             ],
-          )),
+          )
+      ),
     );
   }
 }
