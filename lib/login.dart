@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:p_track/control.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -93,8 +94,13 @@ class _LoginState extends State<Login> {
                                   passwordController.text ==
                                       'anant') // email and password static
                               {
-                                Navigator.pushNamed(
-                                    context, '/control'); //push to next route
+                                int indexVal = getTabIndexValue();
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => Control(indexVal),
+                                  ),
+                                );
                                 Fluttertoast.showToast(
                                   msg: 'Login successfull',
                                   textColor: Colors.red,
@@ -117,5 +123,12 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  int getTabIndexValue() {
+    if (_chosenValue == "Home") return 0;
+    if (_chosenValue == "Business") return 1;
+    if (_chosenValue == "School") return 2;
+    return 0;
   }
 }

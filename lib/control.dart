@@ -6,15 +6,29 @@ import 'package:p_track/screens/school_screen.dart';
 class Control extends StatefulWidget {
   @override
   _ControlState createState() => _ControlState();
+  final int currentTabIndex;
+  Control(
+    this.currentTabIndex,
+  );
 }
 
 class _ControlState extends State<Control> {
-  int currentIndex = 0;
+  int currentIndex;
   final screens = [
     HomeScreen(),
     BusinessScreen(),
     SchoolScreen(),
   ];
+
+  @override
+  void initState() {
+    initCurrentIndexValue();
+    super.initState();
+  }
+
+  initCurrentIndexValue() {
+    currentIndex = widget.currentTabIndex;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +84,7 @@ class _ControlState extends State<Control> {
                 label: 'School',
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 }
