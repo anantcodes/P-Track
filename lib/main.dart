@@ -7,7 +7,9 @@ void main() {
   runApp(
     MaterialApp(
       home: Splash(),
-      routes: {'/login': (context) => Login()},
+      routes: {
+        '/login': (context) => Login()
+      },
     ),
   );
 }
