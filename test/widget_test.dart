@@ -7,8 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:p_track/main.dart';
 import 'package:p_track/splash.dart';
 
 void main() {
