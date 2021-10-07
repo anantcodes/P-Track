@@ -74,6 +74,7 @@ class _LoginState extends State<Login> {
                             });
                           },
                         ),
+                        SizedBox(height: 45.0),
                         TextButton(
                           style: TextButton.styleFrom(
                             primary: Colors.white,
