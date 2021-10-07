@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+
 import './control.dart';
 import './login.dart';
 import './splash.dart';
+
+import 'control.dart';
+import 'login.dart';
+import 'splash.dart';
+
 
 void main() {
   runApp(

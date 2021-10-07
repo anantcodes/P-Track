@@ -108,6 +108,7 @@ class _ControlState extends State<Control> {
                 icon: Icon(Icons.school),
                 label: 'School',
               ),
+
             ),
           ],
         ),
@@ -127,6 +128,10 @@ class _ControlState extends State<Control> {
             ),
           ],
         ),
+
+            ],
+          )
+
       ),
     );
   }
