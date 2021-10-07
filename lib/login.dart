@@ -12,6 +12,8 @@ class _LoginState extends State<Login> {
   TextEditingController passwordController =
       new TextEditingController(); //To store password
 
+ String _chosenValue;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,6 +45,35 @@ class _LoginState extends State<Login> {
                           obscureText: true, //text hiding
                         ),
                         SizedBox(height: 45.0),
+                        DropdownButton<String>(
+                          focusColor:Colors.white,
+                          value: _chosenValue,
+                          //elevation: 5,
+                          style: TextStyle(color: Colors.white),
+                          iconEnabledColor:Colors.black,
+                          items: <String>[
+                            'Home',
+                            'Business',
+                            'School',
+                          ].map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value,style:TextStyle(color:Colors.black),),
+                            );
+                          }).toList(),
+                          hint:Text(
+                            "Please choose a track",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          onChanged: (String value) {
+                            setState(() {
+                              _chosenValue = value;
+                            });
+                          },
+                        ),
                         TextButton(
                           style: TextButton.styleFrom(
                             primary: Colors.white,
