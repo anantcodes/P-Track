@@ -1,6 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:p_track/control.dart';
+import 'package:p_track/register.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -156,6 +158,7 @@ class _LoginState extends State<Login> {
                                     gravity: ToastGravity.BOTTOM);
                               }
                             },
+<<<<<<< HEAD
                             child: Text('Login',
                             style: TextStyle(
                               fontSize: 21,
@@ -163,6 +166,35 @@ class _LoginState extends State<Login> {
                             ),
                             ),
                           )
+=======
+                            child: Text('Login'),
+                          ),
+                          SizedBox(height: 20.0),
+                          RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text: 'New user? ',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              TextSpan(
+                                  text: 'Register here',
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => Register(),
+                                        ),
+                                      );
+                                    }),
+                            ]),
+                          ),
+>>>>>>> ad0c8e35e9ef9d636eb03f2b35225ad0e006811f
                         ]
                     )
                 )

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:p_track/login.dart';
+import 'package:p_track/register.dart';
 
 class Splash extends StatefulWidget {
   @override
