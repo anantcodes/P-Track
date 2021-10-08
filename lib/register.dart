@@ -1,21 +1,23 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:p_track/control.dart';
-import 'package:p_track/register.dart';
+import 'package:p_track/login.dart';
 
-class Login extends StatefulWidget {
+import 'control.dart';
+
+class Register extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
-  TextEditingController emailController =
-      new TextEditingController(); //To store email
-  TextEditingController passwordController =
-      new TextEditingController(); //To store password
+class _RegisterState extends State<Register> {
 
-  String _chosenValue;
+  TextEditingController firstNameController = new TextEditingController(); // To store first name
+  TextEditingController lastNameController = new TextEditingController(); //To store last name
+  TextEditingController emailController1 = new TextEditingController(); //To store email
+  TextEditingController passwordController1 = new TextEditingController(); //To store pass
+  TextEditingController confirmPasswordController1 = new TextEditingController();// To store pass 2
+  String chosenValue;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class _LoginState extends State<Login> {
       home: Scaffold(
         backgroundColor: Colors.blue,
         appBar: AppBar(
-          title: Text("Login page"),
+          title: Text('Registration page'),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -38,21 +40,40 @@ class _LoginState extends State<Login> {
                         children: <Widget>[
                           SizedBox(height: 45.0),
                           TextField(
-                            controller: emailController, //email
+                            controller: firstNameController, //first name
                             decoration:
-                                InputDecoration(labelText: 'Enter your email'),
+                            InputDecoration(labelText: 'Enter your first name'),
                           ),
                           SizedBox(height: 25.0),
                           TextField(
-                            controller: passwordController, //password
+                            controller: lastNameController, //last name
+                            decoration:
+                            InputDecoration(labelText: 'Enter your last name'),
+                          ),
+                          SizedBox(height: 25.0),
+                          TextField(
+                            controller: emailController1, //email
+                            decoration:
+                            InputDecoration(labelText: 'Enter your email'),
+                          ),
+                          SizedBox(height: 25.0),
+                          TextField(
+                            controller: passwordController1, //password
                             decoration: InputDecoration(
-                                labelText: 'Enter your password'),
+                                labelText: 'Enter a new password'),
+                            obscureText: true, //text hiding
+                          ),
+                          SizedBox(height: 25.0),
+                          TextField(
+                            controller: confirmPasswordController1, //password 2
+                            decoration: InputDecoration(
+                                labelText: 'Confirm password'),
                             obscureText: true, //text hiding
                           ),
                           SizedBox(height: 45.0),
                           DropdownButton<String>(
                             focusColor: Colors.white,
-                            value: _chosenValue,
+                            value: chosenValue,
                             //elevation: 5,
                             style: TextStyle(color: Colors.white),
                             iconEnabledColor: Colors.black,
@@ -78,7 +99,7 @@ class _LoginState extends State<Login> {
                             ),
                             onChanged: (String value) {
                               setState(() {
-                                _chosenValue = value;
+                                chosenValue = value;
                               });
                             },
                           ),
@@ -91,11 +112,9 @@ class _LoginState extends State<Login> {
                               elevation: 5.0,
                             ),
                             onPressed: () {
-                              if (emailController.text ==
-                                      'anant1234@gmail.com' &&
-                                  passwordController.text ==
-                                      'anant') // email and password static
-                              {
+                              if (passwordController1.text == confirmPasswordController1.text)
+                                  {
+                                    print('Correct logic');
                                 int indexVal = getTabIndexValue();
                                 Navigator.push(
                                   context,
@@ -104,33 +123,33 @@ class _LoginState extends State<Login> {
                                   ),
                                 );
                                 Fluttertoast.showToast(
-                                  msg: 'Login successfull',
+                                  msg: 'Registration successfull',
                                   textColor: Colors.red,
                                   backgroundColor: Colors.grey,
                                   gravity: ToastGravity.BOTTOM,
                                 );
                               } else {
                                 Fluttertoast.showToast(
-                                    msg: 'Login unsuccessfull',
+                                    msg: 'Registration unsuccessfull',
                                     textColor: Colors.red,
                                     backgroundColor: Colors.grey,
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.BOTTOM);
                               }
                             },
-                            child: Text('Login'),
+                            child: Text('Register'),
                           ),
                           SizedBox(height: 20.0),
                           RichText(
                             text: TextSpan(children: [
                               TextSpan(
-                                text: 'New user? ',
+                                text: 'Already have account? ',
                                 style: TextStyle(
                                   color: Colors.black,
                                 ),
                               ),
                               TextSpan(
-                                  text: 'Register here',
+                                  text: 'Login',
                                   style: TextStyle(
                                     color: Colors.blue,
                                   ),
@@ -139,7 +158,7 @@ class _LoginState extends State<Login> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (_) => Register(),
+                                          builder: (_) => Login(),
                                         ),
                                       );
                                     }),
@@ -156,9 +175,9 @@ class _LoginState extends State<Login> {
   }
 
   int getTabIndexValue() {
-    if (_chosenValue == "Home") return 0;
-    if (_chosenValue == "Business") return 1;
-    if (_chosenValue == "School") return 2;
+    if (chosenValue == "Home") return 0;
+    if (chosenValue == "Business") return 1;
+    if (chosenValue == "School") return 2;
     return 0;
   }
 }
