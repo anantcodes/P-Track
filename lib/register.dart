@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:p_track/login.dart';
 
 import 'control.dart';
 
@@ -136,7 +138,32 @@ class _RegisterState extends State<Register> {
                               }
                             },
                             child: Text('Register'),
-                          )
+                          ),
+                          SizedBox(height: 20.0),
+                          RichText(
+                            text: TextSpan(children: [
+                              TextSpan(
+                                text: 'Already have account? ',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              TextSpan(
+                                  text: 'Login',
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                  ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => Login(),
+                                        ),
+                                      );
+                                    }),
+                            ]),
+                          ),
                         ]
                     )
                 )
