@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:p_track/login.dart';
+import 'package:p_track/register.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _SplashState extends State<Splash> {
     Timer(
         Duration(seconds: 1),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Login())
+            context, MaterialPageRoute(builder: (context) => Register())
         )
     );
   }
