@@ -12,10 +12,10 @@ class _RegisterState extends State<Register> {
 
   TextEditingController firstNameController = new TextEditingController(); // To store first name
   TextEditingController lastNameController = new TextEditingController(); //To store last name
-  TextEditingController emailController = new TextEditingController(); //To store email
-  TextEditingController passwordController = new TextEditingController(); //To store pass
-  TextEditingController confirmPasswordController = new TextEditingController();// To store pass 2
-  String _chosenValue;
+  TextEditingController emailController1 = new TextEditingController(); //To store email
+  TextEditingController passwordController1 = new TextEditingController(); //To store pass
+  TextEditingController confirmPasswordController1 = new TextEditingController();// To store pass 2
+  String chosenValue;
 
   @override
   Widget build(BuildContext context) {
@@ -50,20 +50,20 @@ class _RegisterState extends State<Register> {
                           ),
                           SizedBox(height: 25.0),
                           TextField(
-                            controller: emailController, //email
+                            controller: emailController1, //email
                             decoration:
                             InputDecoration(labelText: 'Enter your email'),
                           ),
                           SizedBox(height: 25.0),
                           TextField(
-                            controller: passwordController, //password
+                            controller: passwordController1, //password
                             decoration: InputDecoration(
                                 labelText: 'Enter a new password'),
                             obscureText: true, //text hiding
                           ),
                           SizedBox(height: 25.0),
                           TextField(
-                            controller: confirmPasswordController, //password 2
+                            controller: confirmPasswordController1, //password 2
                             decoration: InputDecoration(
                                 labelText: 'Confirm password'),
                             obscureText: true, //text hiding
@@ -71,7 +71,7 @@ class _RegisterState extends State<Register> {
                           SizedBox(height: 45.0),
                           DropdownButton<String>(
                             focusColor: Colors.white,
-                            value: _chosenValue,
+                            value: chosenValue,
                             //elevation: 5,
                             style: TextStyle(color: Colors.white),
                             iconEnabledColor: Colors.black,
@@ -97,7 +97,7 @@ class _RegisterState extends State<Register> {
                             ),
                             onChanged: (String value) {
                               setState(() {
-                                _chosenValue = value;
+                                chosenValue = value;
                               });
                             },
                           ),
@@ -110,8 +110,9 @@ class _RegisterState extends State<Register> {
                               elevation: 5.0,
                             ),
                             onPressed: () {
-                              // if (passwordController == confirmPasswordController)
-                              //     {
+                              if (passwordController1.text == confirmPasswordController1.text)
+                                  {
+                                    print('Correct logic');
                                 int indexVal = getTabIndexValue();
                                 Navigator.push(
                                   context,
@@ -125,14 +126,14 @@ class _RegisterState extends State<Register> {
                                   backgroundColor: Colors.grey,
                                   gravity: ToastGravity.BOTTOM,
                                 );
-                              // } else {
-                              //   Fluttertoast.showToast(
-                              //       msg: 'Registration unsuccessfull',
-                              //       textColor: Colors.red,
-                              //       backgroundColor: Colors.grey,
-                              //       toastLength: Toast.LENGTH_SHORT,
-                              //       gravity: ToastGravity.BOTTOM);
-                              // }
+                              } else {
+                                Fluttertoast.showToast(
+                                    msg: 'Registration unsuccessfull',
+                                    textColor: Colors.red,
+                                    backgroundColor: Colors.grey,
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM);
+                              }
                             },
                             child: Text('Register'),
                           )
@@ -147,9 +148,9 @@ class _RegisterState extends State<Register> {
   }
 
   int getTabIndexValue() {
-    if (_chosenValue == "Home") return 0;
-    if (_chosenValue == "Business") return 1;
-    if (_chosenValue == "School") return 2;
+    if (chosenValue == "Home") return 0;
+    if (chosenValue == "Business") return 1;
+    if (chosenValue == "School") return 2;
     return 0;
   }
 }
