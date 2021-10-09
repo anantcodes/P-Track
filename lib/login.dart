@@ -23,7 +23,6 @@ class _LoginState extends State<Login> {
       home: Scaffold(
         backgroundColor: Colors.blue,
         appBar: AppBar(
-          title: Text("Login page"),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -31,12 +30,21 @@ class _LoginState extends State<Login> {
                 height: MediaQuery.of(context).size.height,
                 color: Colors.white,
                 child: Padding(
-                    padding: const EdgeInsets.all(36.0),
+                    padding: const EdgeInsets.only(left: 36.0,right: 36.0,bottom: 40),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          SizedBox(height: 45.0),
+                          Text('Login',
+                          style: TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                          ),
+                          ),
+                          SizedBox(
+                            height: 40,
+                          ),
                           Container(
                             decoration: BoxDecoration(
                               border: Border.all(color:Colors.blue),
@@ -158,17 +166,14 @@ class _LoginState extends State<Login> {
                                     gravity: ToastGravity.BOTTOM);
                               }
                             },
-<<<<<<< HEAD
                             child: Text('Login',
                             style: TextStyle(
                               fontSize: 21,
                                 color: Colors.white
                             ),
                             ),
-                          )
-=======
-                            child: Text('Login'),
                           ),
+
                           SizedBox(height: 20.0),
                           RichText(
                             text: TextSpan(children: [
@@ -194,9 +199,8 @@ class _LoginState extends State<Login> {
                                     }),
                             ]),
                           ),
->>>>>>> ad0c8e35e9ef9d636eb03f2b35225ad0e006811f
-                        ]
-                    )
+
+                        ]),
                 )
             ),
           ),
