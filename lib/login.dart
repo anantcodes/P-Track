@@ -76,7 +76,7 @@ class _LoginState extends State<Login> {
                               decoration: InputDecoration(
                                   labelText: 'Enter your password',
                                 border: InputBorder.none,
-                                prefixIcon: Icon(Icons.password_outlined),
+                                prefixIcon: Icon(Icons.lock),
 
                               ),
                               obscureText: true, //text hiding
